@@ -266,8 +266,8 @@ class MyCallback(Callback):
                     print("Exception sendEmail - ERROR: ", str(e))
 
             ######  Save Draft  ######
-            text +=  str(sendAutomatedEmail) + ', ' + str(inHist) + ', ' + str(inHistSent) + ', ' + emailFrom + ', ' + str(prediction) + ' mins. ' + str(hours) + ' hours. ' + str(days) + ' days. '
-            text = """
+            text =  str(sendAutomatedEmail) + ', ' + str(inHist) + ', ' + str(inHistSent) + ', ' + emailFrom + ', ' + str(prediction) + ' mins. ' + str(hours) + ' hours. ' + str(days) + ' days. '
+            text += """
             AUTOMATED DRAFT SAVE DETAILS
             """
             text += 'You got an email from ' + emailFrom + '. \n'
