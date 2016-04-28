@@ -15,7 +15,7 @@ import email, time, datetime, pytz, imaplib
 # Email settings
 imap_server = 'imap.gmail.com'
 imap_user = 'swallace21@gmail.com'
-imap_password = 'yvpkefaxvrliituv'
+imap_password = ''
 
 importantTitles = ['wife','brother','sister','mother','mom','dad','aunt','uncle','grandmother']
 feature_cols = ['DayNum','MinsSinceMidnight','isReply','isFwd','impTitles','Jason','Sandi','brother', 'sister', 'mom']
@@ -236,13 +236,14 @@ class MyCallback(Callback):
 
             emailBeg, emailEnd = greetingSalutation(emailFrom)
 
+            hours = prediction/60
+            days = hours/24
+
             sendAutomatedEmail = 0
             ### Send automated response ###
             if inHist != 0 or inHistSent == 1: #only send automated response if I have never recieved an email from them
                 sendAutomatedEmail = 1
                 subject = 'Re: ' + subject
-                hours = prediction/60
-                days = hours/24
                 text = emailBeg + ' this is an automated response from Shaun\'s email assistant.  He developed it for his class.  '
                 text += 'The one cool thing about this assistant is it can predict his response time.  '
                 if DayNum == 0 or DayNum == 6:
